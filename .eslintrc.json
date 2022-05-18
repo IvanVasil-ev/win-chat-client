@@ -43,6 +43,7 @@
     "import/no-unresolved": "off",
     "quotes": ["error", "single"],
     "default-param-last": "off",
+    "no-param-reassign": "off",
     "react/prop-types": "off",
     "arrow-body-style": "off",
     "no-unused-vars": "warn",

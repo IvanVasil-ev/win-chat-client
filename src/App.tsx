@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import {
   BrowserRouter as Router,
   Routes,
@@ -6,10 +7,15 @@ import {
 
 import { RouterMap } from './configuration/routerMap';
 import { MainLayout } from './layouts';
+import { RootState } from './store';
 
 export const App = () => {
-  const isAvailable = false;
-  const isAuth = isAvailable && false;
+  const {
+    authorization: { isAuthorized },
+    application: { isAvailable },
+  } = useSelector((state: RootState) => state);
+
+  const isAuth = isAvailable && isAuthorized;
 
   return (
     <Router>
