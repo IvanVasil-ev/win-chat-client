@@ -1,0 +1,21 @@
+@use '../../styles/theme';
+
+.authContainer {
+  padding: 0 30px 30px;
+}
+
+.authTitleWrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 27px 0 61px;
+}
+
+.authTitle {
+  font-size: theme.$font-size-title;
+}
+
+.buttonsWrapper {
+  display: flex;
+  justify-content: space-between;
+}

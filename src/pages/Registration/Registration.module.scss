@@ -1,0 +1,34 @@
+@use '../../styles/theme';
+
+.registrationContainer {
+  margin-bottom: 30px;
+}
+
+.registrationTittleWrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+.registrationTitle {
+  font-size: theme.$font-size-title;
+}
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 15px;
+  margin: 12px 0 41px;
+
+  & >:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.buttonWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}

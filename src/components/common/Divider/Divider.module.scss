@@ -1,0 +1,27 @@
+@use '../../../styles/theme';
+
+.dividerContainer,
+.dividerBottomWhite,
+.dividerBottomGrey {
+  width: 100%;
+  height: 4px;
+}
+
+.dividerTop,
+.dividerBottomWhite,
+.dividerBottomGrey {
+  height: 2px;
+}
+
+.dividerTop {
+  background-color: theme.$grey;
+}
+
+.dividerBottomWhite {
+  background-color: theme.$white;
+}
+
+.dividerBottomGrey {
+  background-color: theme.$background;
+
+}

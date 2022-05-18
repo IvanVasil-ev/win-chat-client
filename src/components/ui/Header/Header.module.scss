@@ -1,0 +1,22 @@
+@use '../../../styles/theme';
+
+.headerContainer {
+  background-color: theme.$surface;
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+
+.headerIcon {
+  height: 32px;
+  width: 32px;
+  margin: 0 5px;
+}
+
+.headerTitle {
+  color: theme.$white;
+  font-size: theme.$font-size-title;
+  font-weight: theme.$font-weight-light;
+}

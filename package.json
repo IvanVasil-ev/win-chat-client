@@ -1,0 +1,66 @@
+{
+  "name": "win-chat-client",
+  "version": "0.1.0",
+  "author": {
+    "name": "Ivan Vasilev",
+    "url": "https://github.com/IvanVasil-ev"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node server.ts",
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "lint": "eslint",
+    "husky": "husky",
+    "check-types": "tsc --pretty --noEmit",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.34",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "@types/react-helmet": "^6.1.5",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "husky": "^8.0.1",
+    "sass": "^1.51.0",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "clsx": "^1.1.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-helmet": "^6.1.0",
+    "react-redux": "^8.0.1",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "redux": "^4.2.0",
+    "redux-saga": "^1.1.3",
+    "web-vitals": "^2.1.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+@use '../../../styles/theme';
+
+.descriptionWrapper {
+  box-shadow: theme.$box-shadow-inside;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding: 6px;
+}
+
+.descriptionText {
+  font-size: theme.$font-size-caption;
+}

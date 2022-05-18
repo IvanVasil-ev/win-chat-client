@@ -1,0 +1,58 @@
+@use '../../../styles/theme';
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputTitleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputTitle,
+.inputCaption {
+  font-size: theme.$font-size-caption;
+}
+
+.captionBlack {
+  color: theme.$black;
+}
+
+.captionSurface {
+  color: theme.$surface;
+}
+
+.captionLink {
+  cursor: pointer;
+}
+
+.captionDefault {
+  cursor: auto;
+}
+
+
+.input {
+  height: 59px;
+  width: 100%;
+  font-size: theme.$font-size-default;
+  padding: 6px 10px;
+  box-shadow: theme.$box-shadow-inside;
+  background-color: theme.$white;
+}
+
+.input:focus {
+  outline: 1px dashed theme.$black;
+}
+
+.input:disabled {
+  background-color: theme.$background;
+}
+
+.inputErrorMessage {
+  height: 21px;
+  line-height: 21px;
+  color: theme.$red;
+  font-size: theme.$font-size-caption;
+}

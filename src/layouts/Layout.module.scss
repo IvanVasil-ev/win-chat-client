@@ -1,0 +1,16 @@
+@use '../styles/theme';
+
+.authContainer,
+.mainContainer {
+  box-shadow: theme.$box-shadow-outside;
+  background-color: theme.$background;
+  padding: 4px;
+}
+
+.authContainer {
+  width: 374px;
+}
+
+.mainContainer {
+  width: 660px;
+}

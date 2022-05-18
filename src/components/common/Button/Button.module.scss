@@ -1,0 +1,27 @@
+@use '../../../styles/theme';
+
+.button {
+  height: 48px;
+  width: 147px;
+  padding: 6px;
+  border: none;
+  background-color: theme.$background;
+  font-size: theme.$font-size-default;
+  box-shadow: theme.$box-shadow-outside;
+  outline: none;
+
+  & > div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.button:active {
+  box-shadow: theme.$box-shadow-inside;
+}
+
+.button:focus > div {
+  outline: 1px dashed #000;
+}

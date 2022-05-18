@@ -1,0 +1,28 @@
+@use '../../styles/theme';
+
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+}
+
+.errorInfoWrapper {
+  display: flex;
+}
+
+.errorIcon {
+  height: 56px;
+  width: 56px;
+  margin-right: 33px;
+}
+
+.errorMessage {
+  font-size: theme.$font-size-caption;
+}
+
+.errorOkay {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

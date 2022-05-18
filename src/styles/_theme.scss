@@ -1,0 +1,23 @@
+/* Colors */
+$app-background: #008080;
+$background: #c3c3c3;
+$surface: #02007f;
+$black: #212121;
+$white: #ffffff;
+$green: #0acf83;
+$grey: #8e8e8e;
+$red: #eb3323;
+
+/* Fonts */
+$font-size-title: 30px;
+$font-size-default: 24px;
+$font-size-caption: 16px;
+$font-weight-light: 300;
+$font-weight-defalt: 400;
+$font-weight-bold: 700;
+
+/* Box-shadow */
+$box-shadow-inside: inset 2px 2px 0 0 #262626, inset -2px -2px 0 0 #f0f0f0,
+  inset 4px 4px 0 0 #7e7e7e, inset -4px -4px 0 0 #b1b1b1;
+$box-shadow-outside: inset -2px -2px 0 0 #262626, inset 2px 2px 0 0 #f0f0f0,
+  inset -4px -4px 0 0 #7e7e7e, inset 4px 4px 0 0 #b1b1b1;
