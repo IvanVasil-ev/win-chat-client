@@ -1,27 +1,46 @@
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
 
+import { getIsAvailableAction } from '../store/application/actions';
 import { ApplicationName } from '../configuration';
-import { Header } from '../components';
-import { LayoutProps } from './types';
+import { Header, Loader } from '../components';
 import { NotAvailable } from '../pages';
+import { LayoutProps } from './types';
+import { useActions } from '../hooks';
+import { RootState } from '../store';
 import styles from './Layout.module.scss';
 
 export const MainLayout = ({
-  children, title, type, isAuth, isAvailable, isAuthRequired,
+  children, title, type, isAuthRequired,
 }: LayoutProps) => {
   const navigate = useNavigate();
+  const { isLoading, isAvailable } = useSelector(
+    (state: RootState) => state.application,
+  );
+  const { handleIsAvailable } = useActions({
+    handleIsAvailable: getIsAvailableAction,
+  });
+
+  const token = localStorage.getItem('token') ?? null;
   const isMainType = type === 'main';
+  const content = isLoading
+    ? <Loader isIcon isText />
+    : children;
 
   useEffect(() => {
-    if (isAuth && !isAuthRequired && isAuthRequired !== null) {
+    handleIsAvailable();
+  }, []);
+
+  useEffect(() => {
+    if (token && !isAuthRequired && isAuthRequired !== null) {
       navigate('/chats');
     }
-    if (!isAuth && isAuthRequired) {
+    if (!token && isAuthRequired) {
       navigate('/');
     }
-  }, [isAuthRequired, isAuth]);
+  }, [isAuthRequired, token]);
 
   return (
     <div className={isMainType ? styles.mainContainer : styles.authContainer}>
@@ -29,7 +48,7 @@ export const MainLayout = ({
         <title>{title ? `${title} | ${ApplicationName}` : ApplicationName}</title>
       </Helmet>
       <Header title={isMainType ? title : null} />
-      {isAvailable ? children : (<NotAvailable />)}
+      {isAvailable ? content : (<NotAvailable />)}
     </div>
   );
 };

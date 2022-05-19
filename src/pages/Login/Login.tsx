@@ -2,11 +2,17 @@ import { useState } from 'react';
 
 import { PagePropTypes } from '../types';
 import { Button, Divider, Input } from '../../components';
+import { loginAction } from '../../store/application/actions';
+import { useActions } from '../../hooks';
 import styles from './Login.module.scss';
 
 export const Login = ({ title }: PagePropTypes) => {
   const [login, setLogin] = useState('');
   const [password, setPassword] = useState('');
+  const isDisabled = !login.trim() || !password.trim();
+  const { handleLogin } = useActions({
+    handleLogin: loginAction,
+  });
 
   return (
     <div className={styles.loginContainer}>
@@ -32,7 +38,9 @@ export const Login = ({ title }: PagePropTypes) => {
       </div>
       <div className={styles.buttonWrapper}>
         <Button type="link">Back</Button>
-        <Button type="button">Login</Button>
+        <Button onClick={() => handleLogin({ login, password })} disabled={isDisabled}>
+          Login
+        </Button>
       </div>
     </div>
   );

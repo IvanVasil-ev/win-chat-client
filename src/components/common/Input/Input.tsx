@@ -5,7 +5,7 @@ import styles from './Input.module.scss';
 
 type InputPropTypes = {
   value: string;
-  onChange: (e: string) => void;
+  onChange?: (e: string) => void;
   type?: 'text' | 'email' | 'password';
   title?: string;
   caption?: string;
@@ -18,7 +18,6 @@ type InputPropTypes = {
 
 export const Input = ({
   value,
-  onChange,
   type = 'text',
   title = '',
   caption = '',
@@ -26,6 +25,7 @@ export const Input = ({
   placeholder = '',
   errorMessage = '',
   disabled = false,
+  onChange = () => {},
   captionColor = 'black',
 }: InputPropTypes) => {
   const navigate = useNavigate();

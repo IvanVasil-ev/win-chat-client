@@ -1,9 +1,7 @@
 import { combineReducers } from 'redux';
 
-import application from './slices/application';
-import authorization from './slices/authorization';
+import application from './application/application';
 
 export const rootReducer = combineReducers({
   application,
-  authorization,
 });

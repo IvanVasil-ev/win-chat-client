@@ -1,0 +1,48 @@
+@keyframes timeRevert {
+  0% {
+    transform: rotate(0deg);
+  }
+  5% {
+    transform: rotate(-15deg);
+  }
+  30% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  55% {
+    transform: rotate(165deg);
+  }
+  80% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loaderContainer {
+  display: flex;
+  padding: 30px;
+  align-items: center;
+}
+
+.loaderCenter {
+  justify-content: center;
+}
+
+.loaderIcon {
+  height: 50px;
+  width: 35px;
+  transform-origin: center;
+  animation: timeRevert 8s ease-in-out infinite;
+}
+
+.leaderMargin {
+  margin-right: 65px;
+}
+
+.loaderText {
+  width: 116px;
+}

@@ -6,13 +6,20 @@ type ButtonPropTypes = {
   children: string;
   type?: 'button' | 'link';
   toPath?: string;
+  disabled?: boolean;
   onClick?: () => void;
   isReplace?: boolean;
   icon?: string | null;
 };
 
 export const Button = ({
-  children, type = 'button', toPath = '/', isReplace = false, onClick = () => {}, icon = null,
+  children,
+  icon = null,
+  toPath = '/',
+  type = 'button',
+  disabled = false,
+  isReplace = false,
+  onClick = () => {},
 }: ButtonPropTypes) => {
   const navigate = useNavigate();
 
@@ -24,7 +31,7 @@ export const Button = ({
   };
 
   return (
-    <button className={styles.button} onClick={onClickHandle}>
+    <button className={styles.button} onClick={onClickHandle} disabled={disabled}>
       <div>
         {icon && icon}
         {children}

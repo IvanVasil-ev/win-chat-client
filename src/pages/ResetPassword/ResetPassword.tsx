@@ -3,17 +3,40 @@ import { useEffect, useState } from 'react';
 import {
   Button, Divider, Input, Description,
 } from '../../components';
+import { PASSWORD_NOT_VALID, PASSWORDS_NOT_EQUALS } from '../../configuration';
+import { useActions } from '../../hooks';
+import { resetPasswordAction } from '../../store/application/actions';
+import { setModal } from '../../store/application/application';
 import { PagePropTypes } from '../types';
 import styles from './ResetPassword.module.scss';
 
 export const ResetPassword = ({ title }: PagePropTypes) => {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const isDisabled = !email.trim() || !newPassword.trim() || !confirmPassword.trim();
+  const passwordsIsNotValid = newPassword.trim() !== confirmPassword.trim();
 
   useEffect(() => {
     setEmail('john@doe.com');
   }, [email]);
+
+  const { handleResetPassword, handleModal } = useActions({
+    handleResetPassword: resetPasswordAction,
+    handleModal: setModal,
+  });
+
+  const onClick = () => {
+    if (passwordsIsNotValid) {
+      return handleModal({ status: true, message: PASSWORDS_NOT_EQUALS, type: 'error' });
+    }
+    if (newPassword.trim().length < 6) {
+      return handleModal({
+        status: true, message: PASSWORD_NOT_VALID, type: 'error',
+      });
+    }
+    handleResetPassword({ email, newPassword });
+  };
 
   return (
     <div className={styles.resetPasswordContainer}>
@@ -30,13 +53,12 @@ export const ResetPassword = ({ title }: PagePropTypes) => {
           title="Email"
           type="email"
           value={email}
-          onChange={setPassword}
         />
         <Input
           title="New password"
           type="password"
-          value={password}
-          onChange={setPassword}
+          value={newPassword}
+          onChange={setNewPassword}
           caption="Minimum 6 characters"
         />
         <Input
@@ -48,7 +70,7 @@ export const ResetPassword = ({ title }: PagePropTypes) => {
       </div>
       <div className={styles.buttonWrapper}>
         <Button type="link" isReplace>Back</Button>
-        <Button type="button">Reset</Button>
+        <Button onClick={onClick} disabled={isDisabled}>Reset</Button>
       </div>
     </div>
   );
