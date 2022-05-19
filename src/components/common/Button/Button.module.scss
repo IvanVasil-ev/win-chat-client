@@ -1,13 +1,13 @@
 @use '../../../styles/theme';
 
-.button {
+.button,
+.activeButton {
   height: 48px;
   width: 147px;
   padding: 6px;
   border: none;
   background-color: theme.$background;
   font-size: theme.$font-size-default;
-  box-shadow: theme.$box-shadow-outside;
   outline: none;
 
   & > div {
@@ -16,6 +16,14 @@
     justify-content: center;
     align-items: center;
   }
+}
+
+.button {
+  box-shadow: theme.$box-shadow-outside;
+}
+
+.activeButton {
+  box-shadow: theme.$box-shadow-inside;
 }
 
 .button:active:enabled {

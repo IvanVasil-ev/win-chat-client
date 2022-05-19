@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import cx from 'clsx';
 
 import styles from './Button.module.scss';
 
@@ -9,14 +10,18 @@ type ButtonPropTypes = {
   disabled?: boolean;
   onClick?: () => void;
   isReplace?: boolean;
+  isActive?: boolean;
   icon?: string | null;
+  style?: string | null;
 };
 
 export const Button = ({
   children,
   icon = null,
+  style = null,
   toPath = '/',
   type = 'button',
+  isActive = false,
   disabled = false,
   isReplace = false,
   onClick = () => {},
@@ -31,7 +36,11 @@ export const Button = ({
   };
 
   return (
-    <button className={styles.button} onClick={onClickHandle} disabled={disabled}>
+    <button
+      className={cx(isActive ? styles.activeButton : styles.button, style)}
+      onClick={onClickHandle}
+      disabled={disabled}
+    >
       <div>
         {icon && icon}
         {children}

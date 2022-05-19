@@ -1,3 +1,10 @@
 .mainContainer {
+  display: flex;
+  flex-direction: column;
   padding: 15px;
+  height: 100%;
+}
+
+.mainTabs {
+  margin-top: 10px;
 }

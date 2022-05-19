@@ -1,5 +1,5 @@
-import cx from 'clsx';
 import { useNavigate } from 'react-router-dom';
+import cx from 'clsx';
 
 import styles from './Input.module.scss';
 
@@ -10,9 +10,11 @@ type InputPropTypes = {
   title?: string;
   caption?: string;
   placeholder?: string;
+  style?: string | null;
   errorMessage?: string;
   captionLink?: string;
   disabled?: boolean;
+  noError?: boolean;
   captionColor?: 'black' | 'surface';
 }
 
@@ -21,6 +23,8 @@ export const Input = ({
   type = 'text',
   title = '',
   caption = '',
+  style = null,
+  noError = false,
   captionLink = '',
   placeholder = '',
   errorMessage = '',
@@ -47,14 +51,14 @@ export const Input = ({
         </div>
       )}
       <input
-        className={styles.input}
+        className={cx(styles.input, style)}
         type={type}
         placeholder={placeholder}
         disabled={disabled}
         value={value}
         onChange={({ target: { value } }) => onChange(value)}
       />
-      <span className={styles.inputErrorMessage}>{errorMessage}</span>
+      {!noError && <span className={styles.inputErrorMessage}>{errorMessage}</span>}
     </div>
   );
 };

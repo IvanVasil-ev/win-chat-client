@@ -10,8 +10,6 @@ export const Profile = () => {
 
   return (
     <div className={styles.profileContainer}>
-      Profile
-      <Button type="link" toPath="/chats">Chats</Button>
       <Button onClick={handleLogout}>Logout</Button>
     </div>
   );

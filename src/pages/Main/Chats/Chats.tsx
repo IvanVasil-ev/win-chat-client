@@ -1,11 +1,10 @@
-import { Button } from '../../../components';
+import { Chat } from './Chat/Chat';
+import { ChatList } from './ChatList/ChatsList';
 import styles from './Chats.module.scss';
 
-export const Chats = () => {
-  return (
-    <div className={styles.chatContainer}>
-      Chats
-      <Button type="link" toPath="/profile">Profile</Button>
-    </div>
-  );
-};
+export const Chats = () => (
+  <div className={styles.chatsContainer}>
+    <ChatList />
+    <Chat />
+  </div>
+);

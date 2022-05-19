@@ -1,0 +1,7 @@
+@use '../../../styles/theme';
+
+.profileContainer {
+  height: 100%;
+  box-shadow: theme.$box-shadow-inside;
+  padding: 4px;
+}

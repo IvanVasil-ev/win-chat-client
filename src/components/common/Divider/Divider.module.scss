@@ -1,15 +1,21 @@
 @use '../../../styles/theme';
 
-.dividerContainer,
+.dividerContainer {
+  display: flex;
+  align-items: center;
+}
+
 .dividerBottomWhite,
 .dividerBottomGrey {
   width: 100%;
   height: 4px;
 }
 
+.dividerLine,
 .dividerTop,
 .dividerBottomWhite,
 .dividerBottomGrey {
+  flex: 1;
   height: 2px;
 }
 
@@ -23,5 +29,10 @@
 
 .dividerBottomGrey {
   background-color: theme.$background;
+}
 
+.dividerText {
+  font-size: theme.$font-size-caption;
+  margin: 0 5px;
+  user-select: none;
 }

@@ -5,6 +5,8 @@
   box-shadow: theme.$box-shadow-outside;
   background-color: theme.$background;
   padding: 4px;
+  display: flex;
+  flex-direction: column;
 }
 
 .authContainer {
@@ -13,6 +15,7 @@
 
 .mainContainer {
   width: 920px;
+  height: 550px;
 }
 
 .cursorWait {

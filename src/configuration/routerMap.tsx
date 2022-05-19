@@ -2,7 +2,16 @@ import {
   Auth, Login, Registration, ForgotPassword, ResetPassword, NotFound, Main,
 } from '../pages';
 
-export const RouterMap = [
+type RouterMapType = {
+  Component: any;
+  title: string;
+  path: string;
+  layoutType: string;
+  isMainPage?: boolean;
+  isAuthRequired: boolean | null;
+};
+
+export const RouterMap: RouterMapType[] = [
   {
     Component: Auth,
     title: 'Auth',
@@ -42,6 +51,7 @@ export const RouterMap = [
     Component: Main,
     title: 'Chats',
     path: '/chats',
+    isMainPage: true,
     layoutType: 'main',
     isAuthRequired: true,
   },
@@ -49,6 +59,7 @@ export const RouterMap = [
     Component: Main,
     title: 'Profile',
     path: '/profile',
+    isMainPage: true,
     layoutType: 'main',
     isAuthRequired: true,
   },

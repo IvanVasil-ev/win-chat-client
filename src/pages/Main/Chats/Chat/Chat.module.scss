@@ -1,0 +1,29 @@
+@use '../../../../styles/theme';
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.chatWrapper {
+  height: 100%;
+  background-color: theme.$white;
+  box-shadow: theme.$box-shadow-inside;
+  margin-bottom: 10px;
+  overflow-y: scroll;
+  padding: 4px;
+}
+
+.chatInputWrapper {
+  display: flex;
+}
+
+.chatInput {
+  flex: 1;
+  margin-right: 5px;
+}
+
+.button {
+  height: 100%;
+}

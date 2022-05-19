@@ -1,0 +1,9 @@
+@use '../../../../styles/theme';
+
+.chatListContainer {
+  width: 250px;
+  overflow-y: scroll;
+  padding: 4px;
+  box-shadow: theme.$box-shadow-inside;
+  margin-right: 10px;
+}
