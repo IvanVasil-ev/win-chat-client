@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
+import cx from 'clsx';
 
 import { getIsAvailableAction } from '../store/application/actions';
 import { ApplicationName } from '../configuration';
@@ -25,6 +26,8 @@ export const MainLayout = ({
 
   const token = localStorage.getItem('token') ?? null;
   const isMainType = type === 'main';
+  const containerStyle = isMainType && !isLoading
+    ? styles.mainContainer : styles.authContainer;
   const content = isLoading
     ? <Loader isIcon isText />
     : children;
@@ -43,7 +46,7 @@ export const MainLayout = ({
   }, [isAuthRequired, token]);
 
   return (
-    <div className={isMainType ? styles.mainContainer : styles.authContainer}>
+    <div className={cx(containerStyle, isLoading && styles.cursorWait)}>
       <Helmet>
         <title>{title ? `${title} | ${ApplicationName}` : ApplicationName}</title>
       </Helmet>

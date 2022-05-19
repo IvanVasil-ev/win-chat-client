@@ -5,8 +5,7 @@ import {
 } from '../../components';
 import { EMAIL_NOT_VALID, EMAIL_REGEXP } from '../../configuration';
 import { useActions } from '../../hooks';
-import { forgotPasswordAction } from '../../store/application/actions';
-import { setModal } from '../../store/application/application';
+import { forgotPasswordAction, setModal } from '../../store/application';
 import { redirectTo } from '../../utilities';
 import { PagePropTypes } from '../types';
 import styles from './ForgotPassword.module.scss';

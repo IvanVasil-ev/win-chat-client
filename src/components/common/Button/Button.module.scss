@@ -22,6 +22,10 @@
   box-shadow: theme.$box-shadow-inside;
 }
 
+.button:hover:enabled {
+  cursor: pointer;
+}
+
 .button:focus > div {
   outline: 1px dashed #000;
 }

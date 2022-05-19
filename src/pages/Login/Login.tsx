@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { PagePropTypes } from '../types';
 import { Button, Divider, Input } from '../../components';
-import { loginAction } from '../../store/application/actions';
+import { loginAction } from '../../store/application';
 import { useActions } from '../../hooks';
 import styles from './Login.module.scss';
 

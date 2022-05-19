@@ -4,9 +4,8 @@ import {
   Button, Divider, Input, Description,
 } from '../../components';
 import { PASSWORD_NOT_VALID, PASSWORDS_NOT_EQUALS } from '../../configuration';
+import { resetPasswordAction, setModal } from '../../store/application';
 import { useActions } from '../../hooks';
-import { resetPasswordAction } from '../../store/application/actions';
-import { setModal } from '../../store/application/application';
 import { PagePropTypes } from '../types';
 import styles from './ResetPassword.module.scss';
 

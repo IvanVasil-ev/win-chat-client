@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { redirectTo } from '../../utilities';
 
 import { ApplicationState, ModalPayload } from './types';
 
@@ -40,6 +41,7 @@ const authSlice = createSlice({
     },
     logout() {
       localStorage.removeItem('token');
+      redirectTo('/');
     },
   },
 });

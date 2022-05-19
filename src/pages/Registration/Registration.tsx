@@ -2,10 +2,9 @@ import { useState } from 'react';
 
 import { PagePropTypes } from '../types';
 import { Button, Divider, Input } from '../../components';
-import { registrateAction } from '../../store/application/actions';
+import { registrateAction, setModal } from '../../store/application';
 import { useActions } from '../../hooks';
 import { EMAIL_NOT_VALID, EMAIL_REGEXP, PASSWORD_NOT_VALID } from '../../configuration';
-import { setModal } from '../../store/application/application';
 import styles from './Registration.module.scss';
 
 export const Registration = ({ title }: PagePropTypes) => {
