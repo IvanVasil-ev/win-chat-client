@@ -40,6 +40,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
     "react/button-has-type": "off",
+    "no-unused-expressions": "off",
     "import/no-unresolved": "off",
     "quotes": ["error", "single"],
     "default-param-last": "off",

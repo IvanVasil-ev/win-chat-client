@@ -6,13 +6,95 @@
   flex: 1;
 }
 
-.chatWrapper {
+.chat {
+  width: 100%;
   height: 100%;
   background-color: theme.$white;
   box-shadow: theme.$box-shadow-inside;
   margin-bottom: 10px;
-  overflow-y: scroll;
   padding: 4px;
+  float: left;
+  overflow-y: scroll;
+}
+
+.chatHistory {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+  padding: 0 10px;
+}
+
+.chatMessageWrapper {
+  width: fit-content;
+  margin-bottom: 15px;
+}
+
+.chatMessageTitle,
+.chatMessage {
+  word-break: break-all;
+}
+
+.chatMessageTitle,
+.messageInfo {
+  font-size: theme.$font-size-caption - 3;
+  font-weight: theme.$font-weight-bold;
+  text-align: start;
+  padding: 0 5px;
+}
+
+.messageInfo {
+  text-align: end;
+  font-weight: theme.$font-weight-light;
+}
+
+.chatMessage {
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: theme.$black;
+  font-size: theme.$font-size-caption;
+  background-color: theme.$chatMessage;
+  max-width: 350px;
+  position: relative;
+  direction: ltr;
+  &:after {
+    content: "";
+    width: 20px;
+    height: 12px;
+    display: block;
+    background-image: url("https://stageviewcincyshakes.firebaseapp.com/icon-gray-message.e6296433d6a72d473ed4.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    bottom: -2px;
+    left: -5px;
+  }
+}
+
+.own {
+  margin-left: auto;
+  & .chatMessageTitle {
+    text-align: end;
+  }
+  & .messageInfo {
+    text-align: start;
+  }
+  & .chatMessage {
+    background-color: #00a9de;
+    color: theme.$white;
+    &::after {
+      width: 19px;
+      height: 13px;
+      left: inherit;
+      right: -5px;
+      background-image: url("https://stageviewcincyshakes.firebaseapp.com/icon-blue-message.2be55af0d98ee2864e29.png");
+    }
+  }
 }
 
 .chatInputWrapper {

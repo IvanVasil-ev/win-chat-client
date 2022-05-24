@@ -2,8 +2,83 @@
 
 .chatListContainer {
   width: 250px;
+  overflow-x: hidden;
   overflow-y: scroll;
   padding: 4px;
   box-shadow: theme.$box-shadow-inside;
   margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatWrapper {
+  padding: 0 5px;
+}
+
+.chatContainer {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  border-radius: 3px;
+  padding: 5px;
+  user-select: none;
+}
+
+.chatContainer:hover {
+  background-color: theme.$grey;
+  cursor: pointer;
+}
+
+.chatImage {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid theme.$black;
+}
+
+.chatContent {
+  flex: 1;
+  margin-left: 5px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chatTitle,
+.chatLastMessage,
+.chatDatetime {
+  max-width: 150px;
+  font-size: theme.$font-size-caption - 3;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.chatTitle {
+  font-weight: theme.$font-weight-bold;
+}
+
+.chatLastMessage {
+  color: theme.$black;
+}
+
+.chatInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.chatStatus {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+
+.newStatus {
+  background-color: theme.$green;
+}
+
+.unreadStatus {
+  background-color: theme.$surface;
 }
